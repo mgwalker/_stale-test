@@ -1,11 +1,19 @@
-on: push
+on:
+  schedule:
+    - cron: "0 * * * *"
 name: Run Stale Bot on Issue Comments
 jobs:
   build:
-    name: workflow name
+    name: stale
     runs-on: ubuntu-latest
     steps:
-      - name: local action name
-        uses: mgwalker/_stale-test@master
+      - uses: actions/checkout@master
+      - name: stale
+        uses: gatsbyjs/stale@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DAYS_BEFORE_STALE: 1
+          DAYS_BEFORE_CLOSE: 1
+          STALE_ISSUE_LABEL: 'stale'
+          OPERATIONS_PER_RUN: 30
+          STALE_ISSUE_MESSAGE: 'Staley staleness'

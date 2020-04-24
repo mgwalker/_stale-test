@@ -1,8 +1,8 @@
 name: bloop
 description: tests how actions appear when they comment on issues
 branding:
-  icon: 'award'
-  color: 'green'
+  icon: 'archive'
+  color: 'yellow'
 inputs:
   GITHUB_TOKENs:
     description: Github token
