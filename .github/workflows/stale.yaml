@@ -5,8 +5,6 @@ jobs:
     name: workflow name
     runs-on: ubuntu-latest
     steps:
-      - name: npm install
-        run: npm ci
       - name: local action name
         uses: mgwalker/_stale-test@master
         with:
