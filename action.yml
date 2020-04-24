@@ -1,0 +1,12 @@
+name: bloop
+description: tests how actions appear when they comment on issues
+branding:
+  icon: 'award'
+  color: 'green'
+inputs:
+  GITHUB_TOKENs:
+    description: Github token
+    required: true
+runs:
+  using: 'node12'
+  main: 'main.js'
